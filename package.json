@@ -1,0 +1,25 @@
+{
+  "name": "jest-test-team-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlemuz/jest-test-team-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlemuz/jest-test-team-generator/issues"
+  },
+  "homepage": "https://github.com/jlemuz/jest-test-team-generator#readme",
+  "dependencies": {
+    "jest": "^28.0.3"
+  }
+}
