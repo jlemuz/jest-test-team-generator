@@ -1,8 +1,4 @@
- //Generates the README based on values passed by the user
- const generatePage = (team) => {
 
-
-return`
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +21,7 @@ return`
     margin: 10px;
     padding: 20px;
     font-size: 30px;
+    flex-wrap: wrap;
     
   }
 
@@ -43,47 +40,47 @@ return`
 <div id = 'cont' class="flex-container" >
 <div class="card bg-primary .text-white" style="width: 18rem; color: white">
   <div class="card-header">
-  ${team[0].getName()}
+  Jose
   <div>
   <i class="bi bi-cup"></i>
-  ${team[0].getRole()}
+  Manager
   </div>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Id: ${team[0].getId()}</li>
-    <li class="list-group-item">Email: ${team[0].getEmail()}</li>
-    <li class="list-group-item">Office Number: ${team[0].getOfficeNumber()}</li>
+    <li class="list-group-item">Id: 23</li>
+    <li class="list-group-item">Email: lemuz.jose@gmail.com</li>
+    <li class="list-group-item">Office Number: 45</li>
   </ul>
 </div>
 
 <div class="card bg-primary" style="width: 18rem; color: white">
   <div class="card-header">
-  ${team[1].getName()}
+  Pablo
   <div>
   <i class="bi bi-eyeglasses"></i>
-  ${team[1].getRole()}
+  Engineer
   </div>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Id: ${team[1].getId()}</li>
-    <li class="list-group-item">Email: ${team[1].getEmail()}</li>
-    <li class="list-group-item">Github: ${team[1].getGithub()}</li>
+    <li class="list-group-item">Id: 6</li>
+    <li class="list-group-item">Email: test@test.com</li>
+    <li class="list-group-item">Github: pablogit</li>
   </ul>
 </div>
 
 
 <div class="card bg-primary" style="width: 18rem; color: white">
   <div class="card-header">
-  ${team[2].getName()}
+  Mike
   <div>
   <i class="bi bi-eyeglasses"></i>
-  ${team[2].getRole()}
+  Engineer
   </div>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Id: ${team[2].getId()}</li>
-    <li class="list-group-item">Email: ${team[2].getEmail()}</li>
-    <li class="list-group-item">Github: ${team[2].getGithub()}</li>
+    <li class="list-group-item">Id: 78</li>
+    <li class="list-group-item">Email: test@test.com</li>
+    <li class="list-group-item">Github: miketest</li>
   </ul>
 </div>
 
@@ -91,21 +88,18 @@ return`
 
 <div class="card bg-primary" style="width: 18rem; color: white">
   <div class="card-header">
-  ${team[3].getName()}
+  George
   <div>
   <i class="bi bi-mortarboard"></i>
-  ${team[3].getRole()}
+  Intern
   </div>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Id: ${team[3].getId()}</li>
-    <li class="list-group-item">Email: ${team[3].getEmail()}</li>
-    <li class="list-group-item">School: ${team[3].getSchool()}</li>
+    <li class="list-group-item">Id: 56</li>
+    <li class="list-group-item">Email: test@test.com</li>
+    <li class="list-group-item">School: UCLA</li>
   </ul>
 </div>
 </div>
 </body>
 </html>
-`;
- };
- module.exports = generatePage;

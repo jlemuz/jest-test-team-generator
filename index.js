@@ -3,11 +3,19 @@ const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
+const fs = require("fs");
+const generatePage = require('./src/page-template.js');
+
 
 //const generatePage = require('./src/page-template');
 //const { writeFile, copyFile } = require('./utils/generate-site');
 
-const promptUser = () => {
+
+
+let team = [];
+
+
+const promptManager = () => {
   return inquirer.prompt([
     {
       type: 'input',
@@ -63,7 +71,10 @@ const promptUser = () => {
       }
   ]).then(answers=>{
       let manager = new Manager(answers.name, answers.id, answers.email, answers.office);
-      console.log(manager);
+      team.push(manager);
+    
+      console.log(team);
+      //promptManager();
       addMembers();
   })
 };
@@ -88,7 +99,7 @@ function addMembers(){
         else if (option.memberType == 'Intern'){
             addIntern();
         }
-        else( console.log('No more members'))
+        else(createPage());
     })
 };
 
@@ -149,7 +160,8 @@ const addEngineer = () => {
         }
     ]).then(answers=>{
         let engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
-        console.log(engineer);
+        team.push(engineer)
+        console.log(team);
         addMembers();
     })
   };
@@ -199,7 +211,7 @@ const addIntern = () => {
         {
           type: 'input',
           name: 'school',
-          message: 'Enter github username (Required)',
+          message: 'Enter school name (Required)',
           validate: schoolInput => {
             if (schoolInput) {
               return true;
@@ -211,8 +223,25 @@ const addIntern = () => {
         }
     ]).then(answers=>{
         let intern = new Intern(answers.name, answers.id, answers.email, answers.school);
-        console.log(intern);
+        team.push(intern)
+        //console.log(intern);
         addMembers();
     })
   };
-promptUser();
+
+
+  function init() {
+    promptManager();
+     
+  };
+
+  function createPage(){
+    fs.writeFile('auto-README.html', generatePage(team), err => {
+      if (err) throw new Error(err);
+      console.log(team);
+      console.log('Page created! Check out auto-README.md in this directory to see it!');
+    });
+  }
+  
+
+  init();//.then(data=>{console.log(data)});
