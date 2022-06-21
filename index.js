@@ -236,10 +236,10 @@ const addIntern = () => {
   };
 
   function createPage(){
-    fs.writeFile('auto-README.html', generatePage(team), err => {
+    fs.writeFile('team.html', generatePage(team), err => {
       if (err) throw new Error(err);
       console.log(team);
-      console.log('Page created! Check out auto-README.md in this directory to see it!');
+      console.log('Page created! Check out the team.html in this directory to see it!');
     });
   }
   
